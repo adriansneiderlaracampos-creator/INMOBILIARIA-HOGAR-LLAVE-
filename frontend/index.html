@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmobiliaria Hogar & Llave - ADSO 3409609</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fa-solid fa-house-chimney-window"></i>
+            <span>Inmobiliaria Hogar & Llave</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><button class="nav-btn active" data-filtro="todos">Portafolio</button></li>
+            <li><button class="nav-btn" data-filtro="disponibles">Disponibles</button></li>
+            <li><button class="nav-btn" data-filtro="arrendados">Arrendados</button></li>
+            <li><a href="#formulario-registro" class="btn-nuevo">Publicar Inmueble</a></li>
+            <li>
+                <span class="contador-badge">
+                    <span id="contador-total">0</span> Inmuebles
+                </span>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-container">
+        <aside class="form-panel" id="formulario-registro">
+            <h2><i class="fa-solid fa-building-circle-check"></i> Nuevo Inmueble</h2>
+            <form id="form-inmueble">
+                <div class="form-group">
+                    <label for="titulo_anuncio">Título del Anuncio</label>
+                    <input type="text" id="titulo_anuncio" placeholder="Ej: Apartamento Duplex Vista Parque" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="zona_ciudad">Zona / Ciudad</label>
+                    <input type="text" id="zona_ciudad" placeholder="Ej: Mosquera - El Trébol" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="canon_arriendo">Canon de Arriendo ($ COP)</label>
+                    <input type="number" id="canon_arriendo" placeholder="Ej: 1350000" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="imagen_url">URL de la Imagen (Opcional)</label>
+                    <input type="url" id="imagen_url" placeholder="https://ejemplo.com/casa.jpg">
+                    <small>Si queda vacío, se usa una imagen por defecto.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="disponible">Estado Inicial</label>
+                    <select id="disponible">
+                        <option value="true" selected>Disponible</option>
+                        <option value="false">Arrendado</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-guardar">
+                    <i class="fa-solid fa-paper-plane"></i> Publicar Inmueble
+                </button>
+            </form>
+        </aside>
+
+        <section class="cards-section">
+            <div class="section-header">
+                <h1 id="titulo-vista">Portafolio Completo de Propiedades</h1>
+            </div>
+            <div id="cards-grid" class="cards-grid"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Adrian & Laura Farfán • ADSO Ficha 3409609 - SENA CBA Mosquera</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

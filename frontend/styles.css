@@ -1,0 +1,309 @@
+:root {
+    --primary: #1e3a8a;
+    --primary-hover: #1d4ed8;
+    --bg-body: #f1f5f9;
+    --card-bg: #ffffff;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --success: #16a34a;
+    --warning: #d97706;
+    --danger: #dc2626;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.btn-nuevo {
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.btn-nuevo:hover {
+    background-color: #3b82f6;
+}
+
+.contador-badge {
+    background-color: #e2e8f0;
+    color: var(--primary);
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.form-panel {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    height: fit-content;
+}
+
+.form-panel h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.65rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group small {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    margin-top: 0.25rem;
+}
+
+.btn-guardar {
+    width: 100%;
+    background-color: var(--primary-hover);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.btn-guardar:hover {
+    background-color: var(--primary);
+}
+
+.section-header {
+    margin-bottom: 1.25rem;
+}
+
+.section-header h1 {
+    font-size: 1.4rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    background-color: #e2e8f0;
+}
+
+.card-body {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.badge {
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.badge-disponible {
+    background-color: #dcfce7;
+    color: var(--success);
+}
+
+.badge-arrendado {
+    background-color: #fef3c7;
+    color: var(--warning);
+}
+
+.card-zona {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.card-precio {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    margin-top: auto;
+}
+
+.card-precio span {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+}
+
+.btn-card {
+    border: none;
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+}
+
+.btn-estado-arrendar {
+    background-color: var(--success);
+}
+
+.btn-estado-liberar {
+    background-color: var(--warning);
+}
+
+.btn-eliminar {
+    background-color: var(--danger);
+}
+
+.footer {
+    text-align: center;
+    padding: 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+@media (max-width: 850px) {
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+}
